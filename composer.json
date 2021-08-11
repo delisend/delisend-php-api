@@ -1,0 +1,44 @@
+{
+    "name": "delisend/delisend-php-api",
+    "description": "Delisend PHP REST API Library",
+    "type": "library",
+    "keywords": [
+        "delisend",
+        "api"
+    ],
+    "homepage": "https://delisend.com/",
+    "authors": [
+        {
+            "name": "Rosi Group s.r.o.",
+            "email": "contact@rosigroup.com"
+        },
+        {
+            "name": "Deisend",
+            "email": "contact@delisend.com"
+        }
+    ],
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.1|^8.0",
+        "ext-curl": "*",
+        "ext-dom": "*",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "^7.0"
+    },
+    "require-dev": {
+        "phpdocumentor/phpdocumentor": "*",
+        "codeception/codeception": "5.0.x-dev",
+        "symfony/var-dumper": "5.x-dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "Delisend\\": "lib/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    }
+}
