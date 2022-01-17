@@ -19,11 +19,12 @@ build/*
 .DS_Store
 
 # Ignore the /vendor/ directory for people using composer
-/test/
 /vendor/
+/library/
 
 # If the vendor directory isn't being commited the composer.lock file should also be ignored
 composer.lock
 
 # Ignore private auth setting files
 auth.json
+!/examples/.env
