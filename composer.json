@@ -26,7 +26,7 @@
         "ext-json": "*",
         "guzzlehttp/guzzle": "^7.0",
         "guzzlehttp/psr7": "^1.2",
-        "vlucas/phpdotenv": "5.4.x-dev"
+        "vlucas/phpdotenv": "^5.4.1"
     },
     "config": {
         "vendor-dir": "library",
