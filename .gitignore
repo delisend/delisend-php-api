@@ -27,4 +27,3 @@ composer.lock
 
 # Ignore private auth setting files
 auth.json
-!/examples/.env

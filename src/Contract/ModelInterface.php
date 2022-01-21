@@ -1,6 +1,6 @@
 <?php
 
-namespace Delisend\Contract;
+namespace DelisendApi\Contract;
 
 
 /**

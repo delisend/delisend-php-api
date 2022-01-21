@@ -1,17 +1,17 @@
 <?php
 
-namespace Delisend\Api;
+namespace DelisendApi\Api;
 
-use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Delisend\ApiException;
-use Delisend\Configuration;
-use Delisend\HeaderSelector;
-use Delisend\ObjectSerializer;
+use DelisendApi\Client;
+use DelisendApi\Configuration;
+use DelisendApi\HeaderSelector;
+use DelisendApi\ObjectSerializer;
+use DelisendApi\ApiException;
 
 
 /**
@@ -21,7 +21,7 @@ use Delisend\ObjectSerializer;
 class AccountApi
 {
     /**
-     * @var \Delisend\Client
+     * @var \DelisendApi\Client
      */
     protected $client;
 
@@ -59,7 +59,7 @@ class AccountApi
      *
      * @return string
      * @throws \InvalidArgumentException
-     * @throws \Delisend\ApiException on non-2xx response
+     * @throws ApiException on non-2xx response
      */
     public function accountGet()
     {
@@ -74,7 +74,7 @@ class AccountApi
      *
      * @return array of string, HTTP status code, HTTP response headers (array of strings)
      * @throws \InvalidArgumentException
-     * @throws \Delisend\ApiException on non-2xx response
+     * @throws ApiException on non-2xx response
      */
     public function accountGetWithHttpInfo()
     {

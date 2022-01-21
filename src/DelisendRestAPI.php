@@ -1,16 +1,16 @@
 <?php
 
-namespace Delisend;
+namespace DelisendApi;
 
-use Delisend\Api\AccountApi;
-use Delisend\Api\RatingApi;
+use DelisendApi\Api\AccountApi;
+use DelisendApi\Api\RatingApi;
 
 
 /**
- * Class DelisendAPI
+ * Class DelisendRestAPI
  * @package Delisend
  */
-final class DelisendAPI
+final class DelisendRestAPI
 {
     /**
      * @var Client
@@ -32,13 +32,13 @@ final class DelisendAPI
      * Delisend constructor.
      */
     public function __construct(
-        \Delisend\Client $client = null,
-        \Delisend\Configuration $config = null,
-        \Delisend\HeaderSelector $selector = null
+        \DelisendApi\Client         $client = null,
+        \DelisendApi\Configuration  $config = null,
+        \DelisendApi\HeaderSelector $selector = null
     ) {
-        $this->client = $client ?: new \Delisend\Client();
-        $this->config = $config ?: new \Delisend\Configuration();
-        $this->headerSelector = $selector ?: new \Delisend\HeaderSelector();
+        $this->client = $client ?: new \DelisendApi\Client();
+        $this->config = $config ?: new \DelisendApi\Configuration();
+        $this->headerSelector = $selector ?: new \DelisendApi\HeaderSelector();
     }
 
 

@@ -1,10 +1,10 @@
 <?php
 
-namespace Delisend\Model;
+namespace DelisendApi\Model;
 
 use \ArrayAccess;
-use Delisend\Contract\ModelInterface;
-use Delisend\ObjectSerializer;
+use DelisendApi\Contract\ModelInterface;
+use DelisendApi\ObjectSerializer;
 
 
 /**

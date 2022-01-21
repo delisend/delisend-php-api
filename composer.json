@@ -24,21 +24,25 @@
         "ext-curl": "*",
         "ext-dom": "*",
         "ext-json": "*",
-        "guzzlehttp/guzzle": "^7.0"
+        "guzzlehttp/guzzle": "^7.0",
+        "guzzlehttp/psr7": "^1.2",
+        "vlucas/phpdotenv": "5.4.x-dev"
     },
-    "require-dev": {
-        "phpdocumentor/phpdocumentor": "*",
-        "codeception/codeception": "5.0.x-dev",
-        "symfony/var-dumper": "5.x-dev"
+    "config": {
+        "vendor-dir": "library",
+        "prepend-autoloader": false
     },
     "autoload": {
         "psr-4": {
-            "Delisend\\": "lib/"
+            "DelisendApi\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/"
         }
+    },
+    "require-dev": {
+        "symfony/var-dumper": "5.4.x-dev"
     }
 }

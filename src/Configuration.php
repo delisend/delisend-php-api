@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Delisend;
+namespace DelisendApi;
 
 use InvalidArgumentException;
 
@@ -52,11 +52,28 @@ class Configuration
     protected $password = '';
 
     /**
-     * The host
+     * Tracking ID
      *
      * @var string
      */
-    protected $host = 'https://delisend.sk/api/v1';
+    protected $tracking_id  = '';
+
+    /**
+     * Password for HTTP basic authentication
+     *
+     * @var string
+     */
+    protected $environment  = 'test';
+
+    /**
+     * The host
+     *
+     * @var array
+     */
+    protected $host = [
+        'test' =>'https://delisend.com/api/test',
+        'prod' =>'https://delisend.com/api/v1',
+    ];
 
     /**
      * User agent of the HTTP request, set to "PHP-Delisend" by default
@@ -198,7 +215,7 @@ class Configuration
      * @param string $username Username for HTTP basic authentication
      * @return $this
      */
-    public function setUsername($username)
+    public function setUsername(string $username)
     {
         $this->username = $username;
         return $this;
@@ -210,7 +227,7 @@ class Configuration
      *
      * @return string Username for HTTP basic authentication
      */
-    public function getUsername()
+    public function getUsername(): string
     {
         return $this->username;
     }
@@ -222,7 +239,7 @@ class Configuration
      * @param string $password Password for HTTP basic authentication
      * @return $this
      */
-    public function setPassword($password)
+    public function setPassword($password): Configuration
     {
         $this->password = $password;
         return $this;
@@ -234,11 +251,57 @@ class Configuration
      *
      * @return string Password for HTTP basic authentication
      */
-    public function getPassword()
+    public function getPassword(): string
     {
         return $this->password;
     }
 
+    /**
+     * Sets the password for HTTP basic authentication
+     *
+     * @param string $environment Password for HTTP basic authentication
+     * @return $this
+     */
+    public function setEnvironment(string $environment)
+    {
+        $this->environment = $environment;
+        return $this;
+    }
+
+
+    /**
+     * Gets the password for HTTP basic authentication
+     *
+     * @return string Password for HTTP basic authentication
+     */
+    public function getEnvironment ()
+    {
+        return $this->environment ;
+    }
+
+
+    /**
+     * Set the tracking ID
+     *
+     * @param string $tracking_id
+     * @return $this
+     */
+    public function setTrackingId(string $tracking_id)
+    {
+        $this->tracking_id = $tracking_id;
+        return $this;
+    }
+
+
+    /**
+     * Get tracking ID
+     *
+     * @return string
+     */
+    public function getTrackingId ()
+    {
+        return $this->tracking_id ;
+    }
 
     /**
      * Sets the host
@@ -248,7 +311,7 @@ class Configuration
      */
     public function setHost($host)
     {
-        $this->host = $host;
+        $this->host[$this->environment] = $host;
         return $this;
     }
 
@@ -258,9 +321,12 @@ class Configuration
      *
      * @return string Host
      */
-    public function getHost()
+    public function getHost(string $environment = null)
     {
-        return $this->host;
+        if ($environment === null) {
+            $environment = $this->environment;
+        }
+        return $this->host[$environment];
     }
 
 

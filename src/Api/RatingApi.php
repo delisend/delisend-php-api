@@ -1,6 +1,6 @@
 <?php
 
-namespace Delisend\Api;
+namespace DelisendApi\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -8,10 +8,10 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Delisend\ApiException;
-use Delisend\Configuration;
-use Delisend\HeaderSelector;
-use Delisend\ObjectSerializer;
+use DelisendApi\ApiException;
+use DelisendApi\Configuration;
+use DelisendApi\HeaderSelector;
+use DelisendApi\ObjectSerializer;
 
 
 /**
@@ -80,6 +80,9 @@ class RatingApi
 
     /**
      * @param array $q
+     * @return array
+     * @throws ApiException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     private function ratingGetWithHttpInfo(array $q)
     {
