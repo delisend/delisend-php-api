@@ -24,10 +24,11 @@
         "ext-dom": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
+        "psr/http-message": "^1.0",
         "psr/log": "^1.0 || ^2.0 || ^3.0",
+        "psr/simple-cache": "^1.0 || ^2.0 || ^3.0",
         "guzzlehttp/guzzle": "^7.0",
-        "guzzlehttp/psr7": "^1.2",
-        "vlucas/phpdotenv": "^5.4.1"
+        "guzzlehttp/psr7": "^1.2"
     },
     "require-dev": {
         "symfony/var-dumper": "5.4.x-dev"
@@ -50,7 +51,6 @@
     "config": {
         "sort-packages": true,
         "prepend-autoloader": false,
-        "vendor-dir": "library",
         "preferred-install": "dist"
     },
     "minimum-stability": "dev",
