@@ -1,36 +1,41 @@
 {
     "name": "delisend/delisend-php-api",
     "description": "Delisend PHP REST API Library",
+    "keywords": ["delisend", "api", "http", "rest", "web service", "curl", "client", "HTTP client", "marketing automation", "frauds protection"],
     "type": "library",
-    "keywords": [
-        "delisend",
-        "api"
-    ],
+    "license": "MIT",
     "homepage": "https://delisend.com/",
     "authors": [
         {
             "name": "Rosi Group s.r.o.",
-            "email": "contact@rosigroup.com"
+            "email": "contact@rosigroup.com",
+            "homepage": "https://rosigroup.com",
+            "role": "Technical Support"
         },
         {
-            "name": "Deisend",
-            "email": "contact@delisend.com"
+            "name": "Delisend",
+            "email": "contact@delisend.com",
+            "homepage": "https://delisend.com"
         }
     ],
-    "license": "MIT",
-    "minimum-stability": "dev",
     "require": {
         "php": "^7.1|^8.0",
         "ext-curl": "*",
         "ext-dom": "*",
         "ext-json": "*",
+        "ext-mbstring": "*",
+        "psr/log": "^1.0 || ^2.0 || ^3.0",
         "guzzlehttp/guzzle": "^7.0",
         "guzzlehttp/psr7": "^1.2",
         "vlucas/phpdotenv": "^5.4.1"
     },
-    "config": {
-        "vendor-dir": "library",
-        "prepend-autoloader": false
+    "require-dev": {
+        "symfony/var-dumper": "5.4.x-dev"
+    },
+    "suggest": {
+        "ext-curl": "Required for CURL handler support",
+        "ext-intl": "Required for Internationalized Domain Name (IDN) support",
+        "psr/log": "Required for using the Log middleware"
     },
     "autoload": {
         "psr-4": {
@@ -42,7 +47,12 @@
             "Tests\\": "tests/"
         }
     },
-    "require-dev": {
-        "symfony/var-dumper": "5.4.x-dev"
-    }
+    "config": {
+        "sort-packages": true,
+        "prepend-autoloader": false,
+        "vendor-dir": "library",
+        "preferred-install": "dist"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
